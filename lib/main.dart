@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/tarif.dart';
 
 void main() {
   runApp(const TarifApp());
@@ -39,7 +40,14 @@ class _MyHomePageState extends State<MyHomePage> {
         // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: SafeArea(child: Container()),
+      body: SafeArea(
+        child: ListView.builder(
+          itemCount: Tarif.yemekler.length,
+          itemBuilder: (context, index) {
+            return Text(Tarif.yemekler[index].yemekAdi);
+          },
+        ),
+      ),
     );
   }
 }
