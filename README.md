@@ -1,4 +1,4 @@
-# myapp
+# SIFIRDAN YAYINA FLUTTER PROJE EĞİTİMİ 2025
 
 A new Flutter project.
 
