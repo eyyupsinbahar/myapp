@@ -50,4 +50,15 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  Widget tarifOlustur(Tarif tarif) {
+    return Card(
+      child:Column (
+        children: [
+          Image(image:AssetImage(tarif.yemekResmi),),
+          Text(tarif.yemekAdi),      
+        ],
+      )
+    );
+  }
 }
