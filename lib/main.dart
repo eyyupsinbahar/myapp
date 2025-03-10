@@ -14,7 +14,9 @@ class TarifApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tarif Uygulaması',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 0, 140, 255),
+        ),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Tarif Uygulaması'),
@@ -37,14 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 5.0,
-        // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // backgr YT oundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: SafeArea(
         child: ListView.builder(
           itemCount: Tarif.yemekler.length,
           itemBuilder: (context, index) {
-            return Text(Tarif.yemekler[index].yemekAdi);
+            return tarifOlustur(Tarif.yemekler[index]);
           },
         ),
       ),
@@ -53,12 +55,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget tarifOlustur(Tarif tarif) {
     return Card(
-      child:Column (
-        children: [
-          Image(image:AssetImage(tarif.yemekResmi),),
-          Text(tarif.yemekAdi),      
-        ],
-      )
+      color: Colors.pink.shade100,
+      elevation: 7.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35.0)),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Image(image: AssetImage(tarif.yemekResmi)),
+            SizedBox(height: 10),
+            Text(
+              tarif.yemekAdi,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
