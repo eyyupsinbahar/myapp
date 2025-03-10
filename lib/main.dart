@@ -44,19 +44,22 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SafeArea(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => TarifDetay()),
+        child: ListView.builder(
+          itemCount: Tarif.yemekler.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (context) => TarifDetay(tarif: Tarif.yemekler[index]),
+                  ),
+                );
+              },
+              child: tarifOlustur(Tarif.yemekler[index]),
             );
           },
-          child: ListView.builder(
-            itemCount: Tarif.yemekler.length,
-            itemBuilder: (context, index) {
-              return tarifOlustur(Tarif.yemekler[index]);
-            },
-          ),
         ),
       ),
     );
