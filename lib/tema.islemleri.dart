@@ -25,7 +25,7 @@ class TemaIslemleri {
     ),
   );
 
-  static TextTheme KoyuYaziTema = TextTheme(
+  static TextTheme koyuyazitema = TextTheme(
     bodyMedium: GoogleFonts.openSans(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
@@ -63,7 +63,7 @@ class TemaIslemleri {
     return ThemeData(
       brightness: Brightness.dark,
       primaryColor: const Color.fromARGB(255, 24, 24, 24),
-      textTheme: KoyuYaziTema,
+      textTheme: koyuyazitema,
     );
   }
 }
